@@ -1,0 +1,968 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47945D24-A6A6-4F96-BA09-E28FD5473D85}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DemoWebApp</RootNamespace>
+    <AssemblyName>DemoWebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="taglib-sharp">
+      <HintPath>..\..\..\DLL\taglib-sharp\taglib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\ManageLogins.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
+    <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Contacts\Default.aspx" />
+    <Content Include="Contacts\Admin\Delete.aspx" />
+    <Content Include="Contacts\Details.aspx" />
+    <Content Include="Contacts\Admin\Edit.aspx" />
+    <Content Include="Contacts\Admin\Insert.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min_United.css" />
+    <Content Include="Content\bootstrap_Spacelab.css" />
+    <Content Include="Content\bootstrap_United.css" />
+    <Content Include="Content\bootstrap_Yeti.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="DynamicData\FieldTemplates\Boolean.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Children.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Children_Insert.ascx" />
+    <Content Include="DynamicData\FieldTemplates\DateTime.ascx" />
+    <Content Include="DynamicData\FieldTemplates\DateTime_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Decimal_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\EmailAddress.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Enumeration.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\ForeignKey.ascx" />
+    <Content Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Integer_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Text.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Url.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Url_Edit.ascx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Account\Web.config" />
+    <Content Include="Images\Logo.png" />
+    <Content Include="Images\play_small.png" />
+    <Content Include="LearnMore.aspx" />
+    <Content Include="JavaScript1.js" />
+    <Content Include="Pricing.aspx" />
+    <Content Include="Wimpy\coverart.jpg" />
+    <Content Include="Wimpy\EXAMPLE-1.html" />
+    <Content Include="Wimpy\EXAMPLE-2.html" />
+    <Content Include="Wimpy\EXAMPLE-3.html" />
+    <Content Include="Wimpy\EXAMPLE-4.html" />
+    <Content Include="Wimpy\EXAMPLE-5.html" />
+    <Content Include="Wimpy\EXAMPLE-6.html" />
+    <Content Include="Wimpy\EXAMPLE-button-1.html" />
+    <Content Include="Wimpy\EXAMPLE-button-2.html" />
+    <Content Include="Wimpy\EXAMPLE-button-3.html" />
+    <Content Include="Wimpy\EXAMPLE-button-4.html" />
+    <Content Include="Wimpy\EXAMPLE-button-5.html" />
+    <Content Include="Wimpy\EXAMPLE-fullscreen-web-app.html" />
+    <Content Include="Wimpy\index.html" />
+    <Content Include="Wimpy\song1.jpg" />
+    <Content Include="Wimpy\song1.mp3" />
+    <Content Include="Wimpy\song2.jpg" />
+    <Content Include="Wimpy\song2.mp3" />
+    <Content Include="Wimpy\song3.jpg" />
+    <Content Include="Wimpy\song3.mp3" />
+    <Content Include="Wimpy\test\amazon-s3.html" />
+    <Content Include="Wimpy\test\api-addListener.html" />
+    <Content Include="Wimpy\test\api-appendPlaylist-1.html" />
+    <Content Include="Wimpy\test\api-appendPlaylist-2.html" />
+    <Content Include="Wimpy\test\api-appendPlaylist-3.html" />
+    <Content Include="Wimpy\test\api-downloadHandler.html" />
+    <Content Include="Wimpy\test\api-enableControls-and-disableControls.html" />
+    <Content Include="Wimpy\test\api-getPlaying.html" />
+    <Content Include="Wimpy\test\api-getPlaylist.html" />
+    <Content Include="Wimpy\test\api-getStatus.html" />
+    <Content Include="Wimpy\test\api-linkHandler-alt.html" />
+    <Content Include="Wimpy\test\api-linkHandler.html" />
+    <Content Include="Wimpy\test\api-onReady-1.html" />
+    <Content Include="Wimpy\test\api-onReady-2-option.html" />
+    <Content Include="Wimpy\test\api-onReady-3-args.html" />
+    <Content Include="Wimpy\test\api-onReady-4-global-wimpy.html" />
+    <Content Include="Wimpy\test\API-quick-reference.html" />
+    <Content Include="Wimpy\test\api-removePlaylistItems.html" />
+    <Content Include="Wimpy\test\api-setAnimate.html" />
+    <Content Include="Wimpy\test\api-setPlaylist.html" />
+    <Content Include="Wimpy\test\api-setSkin-1.html" />
+    <Content Include="Wimpy\test\api-setSkin-2.html" />
+    <Content Include="Wimpy\test\button-api-pause-rewind.html" />
+    <Content Include="Wimpy\test\button-api-play-pause-stop.html" />
+    <Content Include="Wimpy\test\button-api-setMedia.html" />
+    <Content Include="Wimpy\test\button-api-setSize.html" />
+    <Content Include="Wimpy\test\button-api-setVolume.html" />
+    <Content Include="Wimpy\test\button-css-image.html" />
+    <Content Include="Wimpy\test\button-elements.html" />
+    <Content Include="Wimpy\test\button-limit.html" />
+    <Content Include="Wimpy\test\button-loop.html" />
+    <Content Include="Wimpy\test\button-multi-styles.html" />
+    <Content Include="Wimpy\test\button-onClick.html" />
+    <Content Include="Wimpy\test\button-text-via-css.html" />
+    <Content Include="Wimpy\test\button-text-via-option.html" />
+    <Content Include="Wimpy\test\button-width-height.html" />
+    <Content Include="Wimpy\test\coverart-coverArt.jpg" />
+    <Content Include="Wimpy\test\coverart-D.jpg" />
+    <Content Include="Wimpy\test\coverart-E.jpg" />
+    <Content Include="Wimpy\test\coverart-logic.html" />
+    <Content Include="Wimpy\test\coverart-test-1.jpg" />
+    <Content Include="Wimpy\test\coverart-test-2.jpg" />
+    <Content Include="Wimpy\test\coverart-test-3.jpg" />
+    <Content Include="Wimpy\test\coverart-test-setCoverart.jpg" />
+    <Content Include="Wimpy\test\encrypted-filenames.html" />
+    <Content Include="Wimpy\test\fake-eq.html" />
+    <Content Include="Wimpy\test\fullscreen-button.html" />
+    <Content Include="Wimpy\test\fullscreen-web-app.html" />
+    <Content Include="Wimpy\test\iframe-test.html" />
+    <Content Include="Wimpy\test\inchworm.html" />
+    <Content Include="Wimpy\test\index.html" />
+    <Content Include="Wimpy\test\media-playlist-embedded-json.html" />
+    <Content Include="Wimpy\test\media-playlist-simple.html" />
+    <Content Include="Wimpy\test\media-podcast-opml.html" />
+    <Content Include="Wimpy\test\media-podcast.html" />
+    <Content Include="Wimpy\test\media-single-file-WAV.html" />
+    <Content Include="Wimpy\test\media-single-file.html" />
+    <Content Include="Wimpy\test\multiple-players-4.html" />
+    <Content Include="Wimpy\test\multiple-players-ALL.html" />
+    <Content Include="Wimpy\test\new-wimpyplayer-direct-to-body.html" />
+    <Content Include="Wimpy\test\new-wimpyplayer-target.html" />
+    <Content Include="Wimpy\test\option-autoAdvance-disabled.html" />
+    <Content Include="Wimpy\test\option-autoPlay.html" />
+    <Content Include="Wimpy\test\option-coverArt.html" />
+    <Content Include="Wimpy\test\option-disableControls.html" />
+    <Content Include="Wimpy\test\option-disableFlash.html" />
+    <Content Include="Wimpy\test\option-downloadEnable-via-option.html" />
+    <Content Include="Wimpy\test\option-downloadEnable-via-playlist.html" />
+    <Content Include="Wimpy\test\option-glyphs.html" />
+    <Content Include="Wimpy\test\option-id.html" />
+    <Content Include="Wimpy\test\option-infoFormat.html" />
+    <Content Include="Wimpy\test\option-infoScroll.html" />
+    <Content Include="Wimpy\test\option-infoSpeed.html" />
+    <Content Include="Wimpy\test\option-inline.html" />
+    <Content Include="Wimpy\test\option-limitPlaytime.html" />
+    <Content Include="Wimpy\test\option-linkEnable-via-option.html" />
+    <Content Include="Wimpy\test\option-linkEnable-via-playlist.html" />
+    <Content Include="Wimpy\test\option-loop-off.html" />
+    <Content Include="Wimpy\test\option-loop-one-fullscreen.html" />
+    <Content Include="Wimpy\test\option-loop-one.html" />
+    <Content Include="Wimpy\test\option-loop-playlist.html" />
+    <Content Include="Wimpy\test\option-numberTracks.html" />
+    <Content Include="Wimpy\test\option-playlist-tooltip.html" />
+    <Content Include="Wimpy\test\option-plugFirst.html" />
+    <Content Include="Wimpy\test\option-plugPlaylist.html" />
+    <Content Include="Wimpy\test\option-random.html" />
+    <Content Include="Wimpy\test\option-responsive-1.html" />
+    <Content Include="Wimpy\test\option-responsive-2.html" />
+    <Content Include="Wimpy\test\option-responsive-size-1.html" />
+    <Content Include="Wimpy\test\option-responsive-size-2.html" />
+    <Content Include="Wimpy\test\option-responsive-size-fullscreen.html" />
+    <Content Include="Wimpy\test\option-sort-easy-view.html" />
+    <Content Include="Wimpy\test\option-sort.html" />
+    <Content Include="Wimpy\test\option-startOnTrack.html" />
+    <Content Include="Wimpy\test\option-startUpText.html" />
+    <Content Include="Wimpy\test\option-timeFormat.html" />
+    <Content Include="Wimpy\test\option-volume.html" />
+    <Content Include="Wimpy\test\option-width-height-css.html" />
+    <Content Include="Wimpy\test\option-width-height.html" />
+    <Content Include="Wimpy\test\pause.png" />
+    <Content Include="Wimpy\test\pause_small.png" />
+    <Content Include="Wimpy\test\play.png" />
+    <Content Include="Wimpy\test\player-centering.html" />
+    <Content Include="Wimpy\test\playlist-A.jpg" />
+    <Content Include="Wimpy\test\playlist-A.xml" />
+    <Content Include="Wimpy\test\playlist-B.jpg" />
+    <Content Include="Wimpy\test\playlist-B.xml" />
+    <Content Include="Wimpy\test\playlist-C.jpg" />
+    <Content Include="Wimpy\test\playlist-C.xml" />
+    <Content Include="Wimpy\test\playlist-example1.xml" />
+    <Content Include="Wimpy\test\playlist-example2.xml" />
+    <Content Include="Wimpy\test\playlist-in-playlist.html" />
+    <Content Include="Wimpy\test\playlist-in-playlist.xml" />
+    <Content Include="Wimpy\test\playlist-javascript.html" />
+    <Content Include="Wimpy\test\playlist-json-p.html" />
+    <Content Include="Wimpy\test\playlist-json-p.php" />
+    <Content Include="Wimpy\test\playlist-json.html" />
+    <Content Include="Wimpy\test\playlist-json.txt" />
+    <Content Include="Wimpy\test\playlist-plugs.xml" />
+    <Content Include="Wimpy\test\playlist-sort-test.xml" />
+    <Content Include="Wimpy\test\playlist-txt.html" />
+    <Content Include="Wimpy\test\playlist-txt.txt" />
+    <Content Include="Wimpy\test\playlist-xml.html" />
+    <Content Include="Wimpy\test\playlist_real_short_clips.xml" />
+    <Content Include="Wimpy\test\play_small.png" />
+    <Content Include="Wimpy\test\tricks-embedded-skin.html" />
+    <Content Include="Wimpy\test\tricks-extra-data-playlist.txt" />
+    <Content Include="Wimpy\test\tricks-extra-data.html" />
+    <Content Include="Wimpy\test\tricks-playlist-interaction.html" />
+    <Content Include="Wimpy\test\tricks-rating.html" />
+    <Content Include="Wimpy\test\tricks-search.html" />
+    <Content Include="Wimpy\test\width-height-change-directly.html" />
+    <Content Include="Wimpy\test\width-height-with-responsive.html" />
+    <Content Include="Wimpy\test\wimpy.php-api.html" />
+    <Content Include="Wimpy\test\wimpyCssPlayer.css" />
+    <Content Include="Wimpy\test\wimpyCssPlayer1.html" />
+    <Content Include="Wimpy\test\wimpyCssPlayer2.html" />
+    <Content Include="Wimpy\test\_prettify.js" />
+    <Content Include="Wimpy\test\_styles.css" />
+    <Content Include="Wimpy\test\_test-stuff.js" />
+    <Content Include="Wimpy\video1.jpg" />
+    <Content Include="Wimpy\video1.mp4" />
+    <Content Include="Wimpy\wimpy.buttons\pause.png" />
+    <Content Include="Wimpy\wimpy.buttons\pause_small.png" />
+    <Content Include="Wimpy\wimpy.buttons\play.png" />
+    <Content Include="Wimpy\wimpy.buttons\play_small.png" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7779840.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7779876.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7779992.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780000.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780006.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780014.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780022.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780081.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780088.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780094.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780103.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780111.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780119.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780126.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780132.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780155.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780161.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780168.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780175.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780185.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780193.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780199.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780205.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780212.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780218.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780889.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780902.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780910.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780916.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780929.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780935.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780941.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780947.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7780954.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7781347.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7781359.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7781455.css" />
+    <Content Include="Wimpy\wimpy.buttons\WimpyButton_7781463.css" />
+    <Content Include="Wimpy\wimpy.buttons\_no_php_list.txt" />
+    <Content Include="Wimpy\wimpy.buttons\_WimpyButtonDefaultStyle.css" />
+    <Content Include="wimpy.css" />
+    <Content Include="Wimpy\wimpy.buttonWriter.html" />
+    <Content Include="Wimpy\wimpy.css" />
+    <Content Include="Wimpy\wimpy.customizer.html" />
+    <Content Include="Wimpy\wimpy.customizer.php" />
+    <Content Include="Wimpy\wimpy.getid3\getid3 license.txt" />
+    <Content Include="Wimpy\wimpy.getid3\getid3 readme.txt" />
+    <Content Include="Wimpy\wimpy.getid3\getid3 wimpy setup changes.txt" />
+    <Content Include="Wimpy\wimpy.getid3\getid3.lib.php" />
+    <Content Include="Wimpy\wimpy.getid3\getid3.php" />
+    <Content Include="Wimpy\wimpy.getid3\module.audio-video.mpeg.php" />
+    <Content Include="Wimpy\wimpy.getid3\module.audio-video.quicktime.php" />
+    <Content Include="Wimpy\wimpy.getid3\module.audio.aac.php" />
+    <Content Include="Wimpy\wimpy.getid3\module.audio.ac3.php" />
+    <Content Include="Wimpy\wimpy.getid3\module.audio.mp3.php" />
+    <Content Include="Wimpy\wimpy.getid3\module.graphic.jpg.php" />
+    <Content Include="Wimpy\wimpy.getid3\module.graphic.png.php" />
+    <Content Include="Wimpy\wimpy.getid3\module.graphic.tiff.php" />
+    <Content Include="Wimpy\wimpy.getid3\module.tag.apetag.php" />
+    <Content Include="Wimpy\wimpy.getid3\module.tag.id3v1.php" />
+    <Content Include="Wimpy\wimpy.getid3\module.tag.id3v2.php" />
+    <Content Include="Wimpy\wimpy.getid3\module.tag.xmp.php" />
+    <Content Include="Wimpy\wimpy.getid3\write.apetag.php" />
+    <Content Include="wimpy.iframe.html" />
+    <Content Include="wimpy.js" />
+    <Content Include="wimpy.php" />
+    <Content Include="wimpy.skin.list.txt" />
+    <Content Include="wimpy.swf" />
+    <Content Include="Wimpy\wimpy.iframe.html" />
+    <Content Include="Wimpy\wimpy.js" />
+    <Content Include="Wimpy\wimpy.php" />
+    <Content Include="Wimpy\wimpy.skin.list.txt" />
+    <Content Include="Wimpy\wimpy.swf" />
+    <Content Include="Wimpy\WimpyButton_7779840.css" />
+    <Content Include="Wimpy\wimpy_GLYPHS-MAP.html" />
+    <Content Include="Wimpy\wimpy_reg.txt" />
+    <Content Include="wimpy_GLYPHS-MAP.html" />
+    <Content Include="wimpy_reg.txt" />
+    <Content Include="Wimpy\_COPYING.txt" />
+    <Content Include="Wimpy\_LICENSE.txt" />
+    <Content Include="Wimpy\_README.txt" />
+    <Content Include="Skins\004.tsv" />
+    <Content Include="Skins\053.tsv" />
+    <Content Include="Contacts\Admin\Web.config" />
+    <None Include="Properties\PublishProfiles\DemoWebApp.pubxml" />
+    <Content Include="Skins\runboy.tsv" />
+    <None Include="Properties\PublishProfiles\Music Web Site.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Images\Asal - I Can Try EP [Lapsus Music - LPS144].png" />
+    <Content Include="Images\Chris Carrier, Dan Ghenacia - Just a Sin [Adult Only - AO44].png" />
+    <Content Include="Images\Dave DK - Val Maira Remixe [Kompakt - KOMPAKT334].png" />
+    <Content Include="Music.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="Skins\MyPlayer.tsv" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Wimpy\test\playlist-A.json" />
+    <Content Include="Wimpy\test\playlist-B.json" />
+    <Content Include="Wimpy\test\playlist-C.json" />
+    <Content Include="Wimpy\test\playlist-digitalpodcast-top-rated.opml" />
+    <Content Include="Wimpy\test\tricks-extra-data-skin.tsv" />
+    <Content Include="Wimpy\video1.webm" />
+    <Content Include="Wimpy\wimpy.buttons\button designs.tsv" />
+    <Content Include="wimpy.eot" />
+    <Content Include="Wimpy\wimpy.skins\001.tsv" />
+    <Content Include="Wimpy\wimpy.skins\002.tsv" />
+    <Content Include="Wimpy\wimpy.skins\003.tsv" />
+    <Content Include="Wimpy\wimpy.skins\004.tsv" />
+    <Content Include="Wimpy\wimpy.skins\022.tsv" />
+    <Content Include="Wimpy\wimpy.skins\038.tsv" />
+    <Content Include="Wimpy\wimpy.skins\039.tsv" />
+    <Content Include="Wimpy\wimpy.skins\039_small.tsv" />
+    <Content Include="Wimpy\wimpy.skins\040.tsv" />
+    <Content Include="Wimpy\wimpy.skins\041.tsv" />
+    <Content Include="Wimpy\wimpy.skins\044.tsv" />
+    <Content Include="Wimpy\wimpy.skins\045.tsv" />
+    <Content Include="Wimpy\wimpy.skins\045_ratings.tsv" />
+    <Content Include="Wimpy\wimpy.skins\047.tsv" />
+    <Content Include="Wimpy\wimpy.skins\051.tsv" />
+    <Content Include="Wimpy\wimpy.skins\053.tsv" />
+    <Content Include="Wimpy\wimpy.skins\054.tsv" />
+    <Content Include="Wimpy\wimpy.skins\087.tsv" />
+    <Content Include="Wimpy\wimpy.skins\104_a.tsv" />
+    <Content Include="Wimpy\wimpy.skins\104_b.tsv" />
+    <Content Include="Wimpy\wimpy.skins\104_c.tsv" />
+    <Content Include="Wimpy\wimpy.skins\111.tsv" />
+    <Content Include="Wimpy\wimpy.skins\301.tsv" />
+    <Content Include="Wimpy\wimpy.skins\302.tsv" />
+    <Content Include="Wimpy\wimpy.skins\303.tsv" />
+    <Content Include="Wimpy\wimpy.skins\304.tsv" />
+    <Content Include="Wimpy\wimpy.skins\arc.tsv" />
+    <Content Include="Wimpy\wimpy.skins\Big-Volume.tsv" />
+    <Content Include="Wimpy\wimpy.skins\Blake.tsv" />
+    <Content Include="Wimpy\wimpy.skins\button.tsv" />
+    <Content Include="Wimpy\wimpy.skins\cara.tsv" />
+    <Content Include="Wimpy\wimpy.skins\cool-eq.tsv" />
+    <Content Include="Wimpy\wimpy.skins\Cool.tsv" />
+    <Content Include="Wimpy\wimpy.skins\Cosa.tsv" />
+    <Content Include="Wimpy\wimpy.skins\flume.tsv" />
+    <Content Include="Wimpy\wimpy.skins\hensman.tsv" />
+    <Content Include="Wimpy\wimpy.skins\itunesesc.tsv" />
+    <Content Include="Wimpy\wimpy.skins\Milli.tsv" />
+    <Content Include="Wimpy\wimpy.skins\Music.tsv" />
+    <Content Include="Wimpy\wimpy.skins\neon-arcade.tsv" />
+    <Content Include="Wimpy\wimpy.skins\Rad.tsv" />
+    <Content Include="Wimpy\wimpy.skins\Radbig.tsv" />
+    <Content Include="Wimpy\wimpy.skins\runboy.tsv" />
+    <Content Include="Wimpy\wimpy.skins\Runboy_Controls.tsv" />
+    <Content Include="Wimpy\wimpy.skins\Sixteen.tsv" />
+    <Content Include="Wimpy\wimpy.skins\Slick.tsv" />
+    <Content Include="Wimpy\wimpy.skins\Vanilla.tsv" />
+    <Content Include="Wimpy\wimpy.skins\video_player_1.tsv" />
+    <Content Include="Wimpy\wimpy.skins\video_player_2.tsv" />
+    <Content Include="Wimpy\wimpy.skins\Vlad.tsv" />
+    <Content Include="Wimpy\wimpy.skins\wicky.tsv" />
+    <Content Include="Wimpy\wimpy.skins\wicky_mini.tsv" />
+    <Content Include="Wimpy\wimpy.skins\WMP.tsv" />
+    <Content Include="Wimpy\wimpy.skins\_defaultskin.tsv" />
+    <Content Include="Wimpy\wimpy.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AddPhoneNumber.aspx.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.designer.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.designer.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contacts.cs" />
+    <Compile Include="Contacts\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contacts\Admin\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts\Admin\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contacts\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contacts\Admin\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts\Admin\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contacts\Admin\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts\Admin\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.cs">
+      <DependentUpon>Boolean.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.designer.cs">
+      <DependentUpon>Boolean.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.cs">
+      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.designer.cs">
+      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children.ascx.cs">
+      <DependentUpon>Children.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children.ascx.designer.cs">
+      <DependentUpon>Children.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.cs">
+      <DependentUpon>Children_Insert.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.designer.cs">
+      <DependentUpon>Children_Insert.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.cs">
+      <DependentUpon>DateTime.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.designer.cs">
+      <DependentUpon>DateTime.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.cs">
+      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.designer.cs">
+      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.cs">
+      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.designer.cs">
+      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.cs">
+      <DependentUpon>EmailAddress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.designer.cs">
+      <DependentUpon>EmailAddress.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.cs">
+      <DependentUpon>Enumeration.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.designer.cs">
+      <DependentUpon>Enumeration.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.cs">
+      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.designer.cs">
+      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.cs">
+      <DependentUpon>ForeignKey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.designer.cs">
+      <DependentUpon>ForeignKey.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.cs">
+      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.designer.cs">
+      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.cs">
+      <DependentUpon>Integer_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.designer.cs">
+      <DependentUpon>Integer_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.cs">
+      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.designer.cs">
+      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text.ascx.cs">
+      <DependentUpon>Text.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text.ascx.designer.cs">
+      <DependentUpon>Text.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.cs">
+      <DependentUpon>Text_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.designer.cs">
+      <DependentUpon>Text_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url.ascx.cs">
+      <DependentUpon>Url.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url.ascx.designer.cs">
+      <DependentUpon>Url.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url_Edit.ascx.cs">
+      <DependentUpon>Url_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url_Edit.ascx.designer.cs">
+      <DependentUpon>Url_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LearnMore.aspx.cs">
+      <DependentUpon>LearnMore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LearnMore.aspx.designer.cs">
+      <DependentUpon>LearnMore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602291517378_Initial.cs" />
+    <Compile Include="Migrations\201602291517378_Initial.Designer.cs">
+      <DependentUpon>201602291517378_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Music.aspx.cs">
+      <DependentUpon>Music.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Music.aspx.designer.cs">
+      <DependentUpon>Music.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pricing.aspx.cs">
+      <DependentUpon>Pricing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pricing.aspx.designer.cs">
+      <DependentUpon>Pricing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201602291517378_Initial.resx">
+      <DependentUpon>201602291517378_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58118</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58118/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
